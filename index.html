@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAC A4 DINGUESSOU - HAMID - V3.1</title><style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAC A4 DINGUESSOU - HAMID - V3.2</title><style>
 *{box-sizing:border-box;font-family:Arial}body{margin:0;background:#fff5e6;padding-bottom:95px}
 .top{background:#0b2e59;color:white;padding:14px;text-align:center;border-bottom:4px solid gold;position:sticky;top:0;z-index:20}
 .top b{font-size:20px}.gold{color:gold}
@@ -19,8 +19,13 @@
 textarea{width:100%;padding:10px;border-radius:12px;border:2px solid #eee;margin:6px 0}
 .badge{display:inline-block;background:gold;color:black;padding:3px 10px;border-radius:12px;font-weight:900;font-size:12px}
 h2{margin:5px 0}h3{margin:8px 0}
+table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden}
+th{background:#0b2e59;color:white;padding:10px;font-size:13px}
+td{padding:10px;border-bottom:1px solid #eee;font-size:14px}
+.jour{font-weight:900;color:#0b2e59}
+.total{font-weight:900;color:#00a651;font-size:18px;text-align:center}
 </style></head><body>
-<div class="top"><div style="font-size:26px">🏫📚</div><b>LYCÉE DE DINGUESSOU</b><br><b class="gold">👑 BAC A4 - HAMID - V3.1 👑</b><br><small>Terminale A4 • N'Djamena • Tchad</small><br><span class="badge">AVEC L'ÉTUDIANT DE SOWETO - MULUBÉ ❤️</span></div>
+<div class="top"><div style="font-size:26px">🏫📚</div><b>LYCÉE DE DINGUESSOU</b><br><b class="gold">👑 BAC A4 - HAMID - V3.2 👑</b><br><small>Terminale A4 • N'Djamena • Tchad</small><br><span class="badge">AVEC L'ÉTUDIANT DE SOWETO - MULUBÉ ❤️</span></div>
 <div class="annonce">📢 RESTEZ CONNECTÉS ! ON AJOUTE DES COURS CHAQUE JOUR POUR LE BAC ! 📢</div>
 
 <div class="bar">
@@ -32,20 +37,21 @@ h2{margin:5px 0}h3{margin:8px 0}
 <button id="b-meth" style="background:#ff6d00;color:white" onclick="go('meth')">📝 MÉTHODE</button>
 <button id="b-quiz" style="background:black;color:white" onclick="go('quiz')">🎯 QUIZ</button>
 <button id="b-annales" style="background:#8e24aa;color:white" onclick="go('annales')">📜 ANNALES</button>
-<button id="b-plan" style="background:#009688;color:white" onclick="go('plan')">📅 PLANNING</button>
+<button id="b-plan" style="background:#009688;color:white" onclick="go('plan')">📅 EMPLOI DU TEMPS</button>
 </div>
 
 <div id="acc" class="page show">
 <div class="card" style="background:#e3f2fd;border:3px solid #2aa5ff"><h2>👥 QUI EST CONNECTÉ ?</h2><p id="connectes">👥 <b>1</b> élève de Dinguessou est connecté maintenant !</p><p>Ton ami est sur la page ? Dis-lui de cliquer !</p><button class="btn" style="background:#2aa5ff;color:white;font-size:16px" onclick="jeSuisLa()">🙋 MOI JE SUIS CONNECTÉ ! CLIQUE ICI</button><p><small>Chaque clic = +1 élève connecté ! Montre à Hamid que tu es là !</small></p></div>
-<div class="card"><h2>Bienvenue à Dinguessou ! 🎉</h2><p>Application faite par <b>HAMID</b> pour toute la classe TA4 pour réussir le <b>BAC A4 2026</b> !<br>👆 Choisis ta matière en haut ou en bas 👇</p>
+<div class="card"><h2>Bienvenue à Dinguessou ! 🎉</h2><p>Application faite par <b>HAMID SALAH</b> pour toute la classe TA4 pour réussir le <b>BAC A4 2026</b> !<br>👆 Choisis ta matière en haut ou en bas 👇</p>
 <button class="btn" style="background:#7c4dff;color:white" onclick="go('philo')">🧠 Philo →</button>
 <button class="btn" style="background:#2aa5ff;color:white" onclick="go('fr')">📖 Français →</button>
 <button class="btn" style="background:#ff6d00;color:white" onclick="go('meth')">📝 Méthode →</button>
+<button class="btn" style="background:#009688;color:white" onclick="go('plan')">📅 Voir Emploi du Temps →</button>
 <button class="btn" style="background:#e91e63;color:white" onclick="go('fr');showE('f4')">⭐ MULUBÉ - Soweto →</button>
 <button class="btn" style="background:#8e24aa;color:white" onclick="go('annales')">📜 Vrais Sujets BAC →</button></div>
+<div class="card"><h3>📅 NOUVEAU : EMPLOI DU TEMPS TA4 !</h3><p>Maintenant ton vrai emploi du temps est dans l'application ! Clique sur <b>EMPLOI DU TEMPS</b> en haut pour voir tous les jours : Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi !</p></div>
 <div class="card"><h3>⭐ NOUVEAU : L'ÉTUDIANT DE SOWETO</h3><p><b>Mulubé</b>, le héros qui a dit NON à l'apartheid ! Apprends son histoire, c'est pour le BAC ! Clique sur <b>Français → Mulubé</b></p></div>
 <div class="card"><h3>📊 Ton Progrès</h3><p id="prog">Tu as fini 0 cours. Continue ! 💪</p><button class="btn" style="background:#00e676" onclick="alert('Fier d être de Dinguessou ! On va tous avoir le BAC ! 🎓')">🏫 JE SUIS DE DINGUESSOU !</button></div>
-<div class="card"><h3>⭐ Comment réviser ?</h3><p><b>Étape 1 :</b> Lis le GRAND COURS<br><b>Étape 2 :</b> Apprends la MÉTHODE<br><b>Étape 3 :</b> Fais les ANNALES BAC 2024 / 2016 / 2026</p></div>
 </div>
 
 <div id="philo" class="page"><div class="card"><h2>🧠 PHILOSOPHIE - TA4 - 15 Sept 2026</h2>
@@ -131,7 +137,19 @@ h2{margin:5px 0}h3{margin:8px 0}
 <div id="a2026m" class="etape card"><h3>📐 BAC 2026 - Maths - A4 & AB - 2H</h3><p><b>EX 1 :</b> x³-x=0 ; e²x-9=0 ; ln(x+1)=ln(3x-1)<br><br><b>PROBLÈME :</b> f(x)=ax + b/(x-3)</p><button class="btn ok" onclick="alert('Fais ce sujet en 2h !')">✍️ JE TRAITE CE SUJET</button></div>
 </div>
 
-<div id="plan" class="page"><div class="card"><h2>📅 MON PLANNING - DINGUESSOU</h2><p><b>Lundi :</b> Philo - Conscience<br><b>Mardi :</b> Français - Mulubé<br><b>Mercredi :</b> Histoire - Décolonisation<br><b>Jeudi :</b> Géo - Tchad<br><b>Vendredi :</b> Quiz + Annales<br><b>Samedi :</b> Révision avec les amis<br><b>Dimanche :</b> Repos ❤️</p><textarea placeholder="Écris tes notes ici... Ex: Demain je révise Mulubé"></textarea><button class="btn" style="background:#00e676" onclick="alert('Note enregistrée ! Continue !')">💾 SAUVEGARDER</button></div></div>
+<div id="plan" class="page">
+<div class="card" style="background:#0b2e59;color:white;text-align:center"><h2>📅 EMPLOI DU TEMPS - TA4</h2><p>Complexe Scolaire Privé Dinguessou — Niveau TA4<br>🍃 Création par Hamid Salah</p></div>
+<table><tr><th>JOUR</th><th>MATIÈRES & DURÉE</th><th>TOTAL</th></tr>
+<tr><td class="jour">📅 Lundi</td><td>• Philosophie — 1h<br>• Français — 2h<br>• Arabe — 2h</td><td class="total">5h</td></tr>
+<tr><td class="jour">📅 Mardi</td><td>• Philosophie — 2h<br>• Anglais — 1h<br>• Histoire — 2h</td><td class="total">5h</td></tr>
+<tr><td class="jour">📅 Mercredi</td><td>• Mathématiques — 1h<br>• Français — 2h<br>• Philosophie — 2h</td><td class="total">5h</td></tr>
+<tr><td class="jour">📅 Jeudi</td><td>• Philosophie — 1h<br>• Arabe — 2h<br>• Mathématiques — 1h</td><td class="total">4h</td></tr>
+<tr><td class="jour">📅 Vendredi</td><td>• Anglais — 1h<br>• Français — 2h<br>• Géographie — 2h</td><td class="total">5h</td></tr>
+<tr><td class="jour">📅 Samedi</td><td>• EPS — 1h<br>• Philosophie — 2h<br>• Français — 2h</td><td class="total">5h</td></tr>
+<tr><td class="jour">❤️ Dimanche</td><td>• REPOS - Révision à la maison<br>• Relis Mulubé + Philo</td><td class="total">❤️</td></tr>
+</table>
+<div class="card"><h3>📊 TOTAL SEMAINE : 29h de cours</h3><p><b>Le plus de cours :</b> Philo 8h + Français 8h = C'est ça le BAC A4 !<br><b>Astuce Hamid :</b> Le soir, révise la matière que tu as eue le matin même ! Comme ça tu n'oublies jamais !</p><textarea placeholder="Écris tes notes ici... Ex: Demain je révise Mulubé"></textarea><button class="btn" style="background:#00e676" onclick="alert('Note enregistrée ! Continue !')">💾 SAUVEGARDER</button></div>
+</div>
 
 <div class="bottom">
 <button id="bb-acc" class="on" onclick="go('acc')">🏠<br>Accueil</button>
@@ -142,6 +160,7 @@ h2{margin:5px 0}h3{margin:8px 0}
 <button id="bb-meth" onclick="go('meth')">📝<br>Méthode</button>
 <button id="bb-quiz" onclick="go('quiz')">🎯<br>Quiz</button>
 <button id="bb-annales" onclick="go('annales')">📜<br>Annales</button>
+<button id="bb-plan" onclick="go('plan')">📅<br>Emploi</button>
 </div>
 <script>
 let score=0,fait=0,connectes=1;
