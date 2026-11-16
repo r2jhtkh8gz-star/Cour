@@ -1,129 +1,150 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BAC A4 DINGUESSOU - HAMID - V3.3</title><style>
-*{box-sizing:border-box;font-family:Arial}body{margin:0;background:#fff5e6;padding-bottom:95px}
-.top{background:#0b2e59;color:white;padding:14px;text-align:center;border-bottom:4px solid gold;position:sticky;top:0;z-index:20}
-.top b{font-size:20px}.gold{color:gold}
-.annonce{background:#ff1744;color:white;text-align:center;padding:10px;font-weight:900;font-size:15px;position:sticky;top:110px;z-index:19;animation:clig 1s infinite}
-@keyframes clig{0%{background:#ff1744}50%{background:#ff6d00}100%{background:#ff1744}}
-.bar{display:flex;gap:6px;overflow-x:auto;padding:10px;background:white;position:sticky;top:152px;z-index:15}
-.bar button{white-space:nowrap;padding:10px 13px;border:0;border-radius:20px;font-weight:900;cursor:pointer}
-.active{outline:3px solid black}
-.page{display:none;padding:14px}.page.show{display:block}
-.card{background:white;border-radius:18px;padding:15px;margin-bottom:12px;box-shadow:0 2px 8px #0001}
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>HAMID SALAH - BAC A4 - V8</title><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;background:#0a0a0a;color:white;padding-bottom:85px;overflow-x:hidden;max-width:430px;margin-left:auto;margin-right:auto}
+#splash{position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#ff6b00,#ff9a00);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s;cursor:pointer;text-align:center}
+#splash h1{font-size:36px;margin:5px 0}
+.loader{width:40px;height:40px;border:4px solid white;border-top:4px solid transparent;border-radius:50%;animation:spin 1s linear infinite;margin-top:15px}@keyframes spin{to{transform:rotate(360deg)}}
+.top{padding:14px 16px 10px;display:flex;justify-content:space-between;align-items:center}
+.top h1{font-size:24px;margin:0}.top span{font-size:12px;color:#aaa}
+.photo{width:52px;height:52px;border-radius:50%;background:gold;display:flex;align-items:center;justify-content:center;font-size:26px;border:3px solid #ff6b00}
+.notifBtn{background:#1c1c1c;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative}
+.notifDot{position:absolute;top:8px;right:9px;width:9px;height:9px;background:#ff4757;border-radius:50%;border:2px solid #0a0a0a}
+.search{background:#1c1c1c;border-radius:25px;padding:13px 15px;margin:10px 16px;color:#888;display:flex;gap:8px;font-size:14px}
+.notifBar{background:linear-gradient(90deg,#ff6b00,#ff9a00);margin:0 16px;padding:12px;border-radius:16px;display:flex;gap:10px;align-items:center}
+.section{padding:5px 16px}.sectionHead{display:flex;justify-content:space-between;align-items:center}.sectionHead h2{font-size:19px;margin:12px 0}.sectionHead a{color:#ff6b00;font-size:13px;text-decoration:none;font-weight:bold}
+.scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}.scroll::-webkit-scrollbar{display:none}
+.carte{min-width:165px;height:215px;border-radius:22px;padding:13px;position:relative;overflow:hidden;flex-shrink:0;cursor:pointer}
+.carte b{font-size:15px}.carte p{font-size:11px;opacity:.95;margin:4px 0}.carte .emoji{font-size:48px;margin:8px 0}.carte .etoiles{font-size:12px}.carte .bas{position:absolute;bottom:10px;left:12px;right:12px;background:rgba(0,0,0,.6);padding:9px;border-radius:12px;font-size:12px;font-weight:bold;display:flex;justify-content:space-between}
+.badge{position:absolute;top:10px;right:10px;background:#ff4757;color:white;font-size:10px;padding:4px 8px;border-radius:20px;font-weight:bold}.badgeVert{background:#2ed573}
+.c1{background:linear-gradient(180deg,#ffd166,#ff8c00)} .c2{background:linear-gradient(180deg,#74b9ff,#0984e3)} .c3{background:linear-gradient(180deg,#55efc4,#00b894)} .c4{background:linear-gradient(180deg,#ff7675,#d63031)} .c5{background:linear-gradient(180deg,#a29bfe,#6c5ce7)} .c6{background:linear-gradient(180deg,#fdcb6e,#e17055)}
+.page{display:none;padding:0 16px}.page.active{display:block;animation:fade .3s}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.cardBlanc{background:white;color:#222;border-radius:20px;padding:15px;margin:10px 0}
+.btnApp{background:#ff6b00;color:white;border:none;padding:14px;border-radius:16px;width:100%;font-weight:bold;font-size:15px;margin:5px 0;cursor:pointer}
 .btn{padding:11px 13px;border:0;border-radius:20px;font-weight:900;margin:4px;cursor:pointer}
-.q{background:#fff;border:2px solid #eee;border-radius:14px;padding:12px;margin:8px 0}
-.ok{background:#00e676}.bad{background:#ff5252;color:white}
-.bottom{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:8px;border-top:2px solid #eee;z-index:20;overflow-x:auto}
-.bottom button{border:0;background:#f1f1f1;padding:8px 9px;border-radius:16px;font-weight:900;font-size:12px;white-space:nowrap}
-.bottom button.on{background:black;color:white}
+.q{background:#1c1c1c;border:2px solid #333;border-radius:14px;padding:12px;margin:8px 0}
+.ok{background:#00e676;color:black}.bad{background:#ff5252;color:white}
 .etape{display:none}.etape.show{display:block}
-textarea,input{width:100%;padding:12px;border-radius:12px;border:2px solid #eee;margin:6px 0;font-size:15px}
-.badge{display:inline-block;background:gold;color:black;padding:3px 10px;border-radius:12px;font-weight:900;font-size:12px}
-h2{margin:5px 0}h3{margin:8px 0}
-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden}
-th{background:#0b2e59;color:white;padding:10px;font-size:13px}
-td{padding:10px;border-bottom:1px solid #eee;font-size:14px}
-.jour{font-weight:900;color:#0b2e59}
-.total{font-weight:900;color:#00a651;font-size:18px;text-align:center}
-.champ{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid #eee;border-radius:14px;padding:10px;margin:8px 0}
+textarea,input{width:100%;padding:12px;border-radius:12px;border:2px solid #ddd;margin:6px 0;font-size:15px}
+.champ{display:flex;align-items:center;gap:10px;background:#fff;border:2px solid #eee;border-radius:14px;padding:10px;margin:8px 0;color:#222}
 .rank{font-size:24px;font-weight:900;width:40px;text-align:center}
+table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;color:#222}th{background:#ff6b00;color:white;padding:10px;font-size:13px}td{padding:10px;border-bottom:1px solid #eee;font-size:14px}
+.jour{font-weight:900;color:#ff6b00}.total{font-weight:900;color:#00a651;font-size:18px;text-align:center}
+.bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#111;border-top:1px solid #222;display:flex;justify-content:space-around;padding:8px 0 18px;z-index:100}
+.navItem{text-align:center;font-size:11px;color:#888;cursor:pointer;flex:1}.navItem.active{color:#ff6b00}.navItem div{font-size:23px}
+.sousTitre{background:#ff6b00;color:white;padding:8px 12px;border-radius:12px;font-weight:900;margin:12px 0 6px;font-size:14px}
 </style></head><body>
-<div class="top"><div style="font-size:26px">🏫📚</div><b>LYCÉE DE DINGUESSOU</b><br><b class="gold">👑 BAC A4 - HAMID - V3.3 👑</b><br><small>Terminale A4 • N'Djamena • Tchad</small><br><span class="badge">AVEC L'ÉTUDIANT DE SOWETO - MULUBÉ ❤️</span></div>
-<div class="annonce">📢 RESTEZ CONNECTÉS ! ON AJOUTE DES COURS CHAQUE JOUR POUR LE BAC ! 📢</div>
 
-<div class="bar">
-<button id="b-acc" class="active" style="background:#ff4d6d;color:white" onclick="go('acc')">🏠 ACCUEIL</button>
-<button id="b-philo" style="background:#7c4dff;color:white" onclick="go('philo')">🧠 PHILO</button>
-<button id="b-fr" style="background:#2aa5ff;color:white" onclick="go('fr')">📖 FRANÇAIS</button>
-<button id="b-hist" style="background:#ffb800" onclick="go('hist')">🌍 HISTOIRE</button>
-<button id="b-geo" style="background:#00c853;color:white" onclick="go('geo')">🗺️ GÉO</button>
-<button id="b-meth" style="background:#ff6d00;color:white" onclick="go('meth')">📝 MÉTHODE</button>
-<button id="b-quiz" style="background:black;color:white" onclick="go('quiz')">🎯 QUIZ</button>
-<button id="b-annales" style="background:#8e24aa;color:white" onclick="go('annales')">📜 ANNALES</button>
-<button id="b-plan" style="background:#009688;color:white" onclick="go('plan')">📅 EMPLOI</button>
-<button id="b-notes" style="background:#e91e63;color:white" onclick="go('notes')">📝 MES NOTES</button>
-<button id="b-champ" style="background:gold;color:black" onclick="go('champ')">🏆 CHAMPIONS</button>
+<div id="splash" onclick="entrerApp()"><div style="font-size:70px">👑</div><h1>HAMID SALAH</h1><p>Bienvenue Hamid Salah 👑 - Terminale A4</p><div class="loader"></div><p style="font-size:12px;margin-top:15px">Chargement...</p><button style="background:white;color:#ff6b00;border:none;padding:12px 25px;border-radius:25px;font-weight:bold;font-size:16px;margin-top:15px">ENTRER DANS L'APP ➤</button></div>
+
+<div class="top"><div><h1>HAMID SALAH 👑</h1><span>Bonjour, Hamid Salah - Terminale A4</span></div><div style="display:flex;gap:8px;align-items:center"><div class="notifBtn" onclick="alert('🔔 2 cours aujourd\'hui ! Philo + Français')">🔔<div class="notifDot"></div></div><div class="photo">👑</div></div></div>
+<div class="search">🔍 Rechercher un cours, Mulubé, Philo...</div>
+<div class="notifBar"><div style="font-size:28px">🔥</div><div><b>Objectif : Réussir le BAC A4 !</b><p style="font-size:11px;margin:2px 0 0">Nouveaux cours complets ajoutés ! 📚</p></div></div>
+
+<!-- ACCUEIL -->
+<div id="page-accueil" class="page active">
+<div class="section" style="padding:0"><div class="sectionHead"><h2>Mes Matières - TA4</h2></div>
+<div class="scroll">
+<div class="carte c1" onclick="ouvrirPage('philo')"><div class="badge">COEF 5</div><div class="emoji">🧠</div><b>Philosophie</b><p>6 chapitres complets</p><div class="etoiles">⭐⭐⭐⭐⭐ 4.9</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+<div class="carte c2" onclick="ouvrirPage('fr')"><div class="badge badgeVert">COEF 5</div><div class="emoji">📖</div><b>Français</b><p>Orale + Négro-Africaine</p><div class="etoiles">⭐⭐⭐⭐⭐ 5.0</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+<div class="carte c3" onclick="ouvrirPage('hist')"><div class="emoji">🏛️</div><b>Histoire</b><p>2GM Complète !</p><div class="etoiles">⭐⭐⭐⭐ 4.8</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+<div class="carte c4" onclick="ouvrirPage('geo')"><div class="emoji">🌍</div><b>Géographie</b><p>Tchad • CEMAC</p><div class="etoiles">⭐⭐⭐⭐ 4.7</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+<div class="carte c5" onclick="ouvrirPage('anglais')"><div class="emoji">🇬🇧</div><b>Anglais</b><p>Essay • Compréhension</p><div class="etoiles">⭐⭐⭐⭐⭐ 4.9</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+<div class="carte c6" onclick="ouvrirPage('arabe')"><div class="emoji">📖</div><b>Arabe</b><p>Lecture + Grammaire</p><div class="etoiles">⭐⭐⭐⭐⭐ 5.0</div><div class="bas"><span>Lire</span><span>›</span></div></div>
+</div>
+<div style="background:white;color:#222;padding:15px;border-radius:18px;margin-top:10px;font-size:14px">👆 Clique sur une matière, Hamid Salah ! Tous les cours complets sont dedans !</div></div>
+<div class="section" style="padding:0"><div class="sectionHead"><h2>📊 Ton Progrès</h2></div><div style="background:#1a1a1a;border-radius:18px;padding:15px"><p id="prog">Tu as fini 0 cours. Continue ! 💪</p><p id="mespoints">⭐ Tes points : 0 points</p><button class="btnApp" style="background:#2ed573" onclick="alert('Fier d être de Dinguessou !')">🏫 JE SUIS DE DINGUESSOU !</button></div></div>
+<div class="section" style="padding:0"><div class="sectionHead"><h2>👥 Qui est connecté ?</h2></div><div style="background:#1a1a1a;border-radius:18px;padding:15px;text-align:center"><p id="connectes">👥 <b>1</b> élève de Dinguessou est connecté !</p><button class="btnApp" onclick="jeSuisLa()">🙋 MOI JE SUIS CONNECTÉ !</button></div></div>
 </div>
 
-<div id="acc" class="page show">
-<div class="card" style="background:#e3f2fd;border:3px solid #2aa5ff"><h2>👥 QUI EST CONNECTÉ ?</h2><p id="connectes">👥 <b>1</b> élève de Dinguessou est connecté maintenant !</p><button class="btn" style="background:#2aa5ff;color:white;font-size:16px" onclick="jeSuisLa()">🙋 MOI JE SUIS CONNECTÉ ! CLIQUE ICI</button></div>
-<div class="card"><h2>Bienvenue à Dinguessou ! 🎉</h2><p>Application faite par <b>HAMID SALAH</b> pour toute la classe TA4 pour réussir le <b>BAC A4 2026</b> !</p>
-<button class="btn" style="background:#7c4dff;color:white" onclick="go('philo')">🧠 Philo →</button>
-<button class="btn" style="background:#2aa5ff;color:white" onclick="go('fr')">📖 Français →</button>
-<button class="btn" style="background:#ff6d00;color:white" onclick="go('meth')">📝 Méthode →</button>
-<button class="btn" style="background:#009688;color:white" onclick="go('plan')">📅 Emploi du Temps →</button>
-<button class="btn" style="background:#e91e63;color:white" onclick="go('notes')">📝 Mes Notes →</button>
-<button class="btn" style="background:gold" onclick="go('champ')">🏆 Classement Champions →</button>
-<button class="btn" style="background:#e91e63;color:white" onclick="go('fr');showE('f4')">⭐ MULUBÉ - Soweto →</button>
-<button class="btn" style="background:#8e24aa;color:white" onclick="go('annales')">📜 Vrais Sujets BAC →</button></div>
-<div class="card" style="background:#fff9c4;border:3px solid gold"><h3>🏆 NOUVEAU : CLASSEMENT DES CHAMPIONS !</h3><p>Qui a fini le plus de cours ? Qui a le meilleur score au Quiz ?<br>Finis un cours, gagne des points, deviens <b>N°1 de Dinguessou</b> !<br><button class="btn" style="background:gold" onclick="go('champ')">🏆 VOIR LE CLASSEMENT →</button></p></div>
-<div class="card" style="background:#fce4ec;border:3px solid #e91e63"><h3>📝 NOUVEAU : MES NOTES / MON CAHIER !</h3><p>Écris tes notes ici, comme dans un cahier ! Ça reste dans ton téléphone, même si tu fermes l'application !<br><button class="btn" style="background:#e91e63;color:white" onclick="go('notes')">📝 OUVRIR MON CAHIER →</button></p></div>
-<div class="card"><h3>📊 Ton Progrès</h3><p id="prog">Tu as fini 0 cours. Continue ! 💪</p><p id="mespoints">⭐ Tes points : 0 points</p><button class="btn" style="background:#00e676" onclick="alert('Fier d être de Dinguessou ! On va tous avoir le BAC ! 🎓')">🏫 JE SUIS DE DINGUESSOU !</button></div>
-</div>
+<!-- ================= PHILOSOPHIE ================= -->
+<div id="page-philo" class="page"><h2>🧠 PHILOSOPHIE - TA4</h2>
+<div class="cardBlanc"><button class="btn" style="background:#7c4dff;color:white" onclick="showE('p1')">Conscience</button><button class="btn" style="background:#eee" onclick="showE('p2')">Autrui</button><button class="btn" style="background:#eee" onclick="showE('p3')">Liberté</button><button class="btn" style="background:#eee" onclick="showE('p4')">Dieu</button><button class="btn" style="background:#eee" onclick="showE('p5')">État / Justice</button><button class="btn" style="background:#eee" onclick="showE('p6')">Travail</button></div>
+<div id="p1" class="etape show cardBlanc"><h3>Conscience et Inconscience</h3><p><b>Conscience :</b> Savoir ce que je fais. Descartes : <i>Je pense, donc je suis</i>.<br><b>Inconscient - Freud :</b> Partie cachée. Rêves, oublis, lapsus.<br><b>Exemple BAC :</b> Pourquoi j'oublie un nom ? C'est mon inconscient.</p><button class="btnApp" onclick="fini('Philo Conscience')">✅ J'ai compris ! +10</button></div>
+<div id="p2" class="etape cardBlanc"><h3>Autrui</h3><p><b>Autrui = l'autre homme.</b> Sans Autrui, je ne me connais pas. Sartre : <i>L'enfer, c'est les autres</i>. Mais sans les autres, on est seul.</p><button class="btnApp" onclick="fini('Philo Autrui')">✅ J'ai compris ! +10</button></div>
+<div id="p3" class="etape cardBlanc"><h3>Liberté</h3><p><b>Liberté :</b> Choisir et assumer. Sartre : <i>L'homme est condamné à être libre</i>. Comme Mulubé qui choisit de se battre.</p><button class="btnApp" onclick="fini('Philo Liberté')">✅ J'ai compris ! +10</button></div>
+<div id="p4" class="etape cardBlanc"><h3>Dieu et Religion</h3><p>Marx : <i>La religion est l'opium du peuple</i>. Mais la religion donne aussi courage et espoir. Au BAC, donne les 2 côtés.</p><button class="btnApp" onclick="fini('Philo Dieu')">✅ J'ai compris ! +10</button></div>
+<div id="p5" class="etape cardBlanc"><h3>L'État et la Justice</h3><p>Sans État, c'est le désordre. Justice : Donner à chacun ce qui lui revient. Quand l'État est injuste comme l'apartheid, il faut le combattre.</p><button class="btnApp" onclick="fini('Philo État')">✅ J'ai compris ! +10</button></div>
+<div id="p6" class="etape cardBlanc"><h3>Le Travail</h3><p>Le travail rend libre car il permet de manger, construire, se réaliser. L'élève qui travaille, il devient libre au BAC.</p><button class="btnApp" onclick="fini('Philo Travail')">✅ J'ai compris ! +10</button></div></div>
 
-<div id="philo" class="page"><div class="card"><h2>🧠 PHILOSOPHIE - TA4</h2>
-<button class="btn" style="background:#7c4dff;color:white" onclick="showE('p1')">Conscience</button>
-<button class="btn" style="background:#eee" onclick="showE('p2')">Autrui</button>
-<button class="btn" style="background:#eee" onclick="showE('p3')">Liberté</button>
-<button class="btn" style="background:#eee" onclick="showE('p4')">Dieu</button>
-<button class="btn" style="background:#eee" onclick="showE('p5')">État / Justice</button>
-<button class="btn" style="background:#eee" onclick="showE('p6')">Travail</button></div>
-<div id="p1" class="etape show card"><h3>COURS 1 : Conscience et Inconscience</h3><p><b>Conscience :</b> Je sais ce que je fais. Descartes : <i>Je pense, donc je suis</i>.<br><b>Inconscient - Freud :</b> Partie cachée. Rêves, oublis, lapsus.</p><button class="btn ok" onclick="fini('Philo Conscience')">✅ J'ai compris ! +10 points</button></div>
-<div id="p2" class="etape card"><h3>COURS 2 : Autrui</h3><p><b>Autrui = l'autre homme.</b> Sans Autrui, je ne me connais pas. Sartre : <i>L'enfer, c'est les autres</i>.</p><button class="btn ok" onclick="fini('Philo Autrui')">✅ J'ai compris ! +10 points</button></div>
-<div id="p3" class="etape card"><h3>COURS 3 : Liberté et Désaliénation</h3><p><b>Liberté :</b> Choisir et assumer. Sartre : <i>L'homme est condamné à être libre</i>. Comme Mulubé !</p><button class="btn ok" onclick="fini('Philo Liberté')">✅ J'ai compris ! +10 points</button></div>
-<div id="p4" class="etape card"><h3>COURS 4 : Dieu et la Religion</h3><p>Marx : <i>La religion est l'opium du peuple</i>.</p><button class="btn ok" onclick="fini('Philo Dieu')">✅ J'ai compris ! +10 points</button></div>
-<div id="p5" class="etape card"><h3>COURS 5 : L'État et la Justice</h3><p>Sans État, c'est le désordre. Justice : Donner à chacun ce qui lui revient.</p><button class="btn ok" onclick="fini('Philo État')">✅ J'ai compris ! +10 points</button></div>
-<div id="p6" class="etape card"><h3>COURS 6 : Le Travail</h3><p>Le travail rend libre car il permet de manger, construire, se réaliser.</p><button class="btn ok" onclick="fini('Philo Travail')">✅ J'ai compris ! +10 points</button></div>
-</div>
-
-<div id="fr" class="page"><div class="card"><h2>📖 FRANÇAIS - TA</h2>
-<button class="btn" style="background:#2aa5ff;color:white" onclick="showE('f1')">Litt. Négro-Africaine</button>
-<button class="btn" style="background:#eee" onclick="showE('f2')">Litt. Orale</button>
-<button class="btn" style="background:#eee" onclick="showE('f3')">Engagement</button>
+<!-- ================= FRANCAIS - BEAUCOUP DE COURS ================= -->
+<div id="page-fr" class="page"><h2>📖 FRANÇAIS - TA - COURS COMPLETS</h2>
+<div class="cardBlanc">
+<div class="sousTitre">📖 A - LITTÉRATURE ORALE</div>
+<button class="btn" style="background:#2aa5ff;color:white" onclick="showE('f2a')">1. C'est quoi la Litt. Orale ?</button>
+<button class="btn" style="background:#eee" onclick="showE('f2b')">2. Le Conte</button>
+<button class="btn" style="background:#eee" onclick="showE('f2c')">3. Le Proverbe</button>
+<button class="btn" style="background:#eee" onclick="showE('f2d')">4. L'Épopée + Le Griot</button>
+<div class="sousTitre">📖 B - LITTÉRATURE NÉGRO-AFRICAINE</div>
+<button class="btn" style="background:#7c4dff;color:white" onclick="showE('f1a')">1. C'est quoi ? Négritude</button>
+<button class="btn" style="background:#eee" onclick="showE('f1b')">2. Aimé Césaire</button>
+<button class="btn" style="background:#eee" onclick="showE('f1c')">3. Senghor</button>
+<button class="btn" style="background:#eee" onclick="showE('f1d')">4. Camara Laye - L'Enfant Noir</button>
+<button class="btn" style="background:#eee" onclick="showE('f1e')">5. Mongo Beti + Autres</button>
+<div class="sousTitre">📖 C - LITTÉRAIRE / ENGAGEMENT / MULUBÉ</div>
+<button class="btn" style="background:#eee" onclick="showE('f3')">L'Engagement</button>
 <button class="btn" style="background:#e91e63;color:white" onclick="showE('f4')">⭐ MULUBÉ - SOWETO</button>
-<button class="btn" style="background:#eee" onclick="showE('f5')">Roi Christophe</button></div>
-<div id="f1" class="etape show card"><h3>COURS 1 : Littérature Négro-Africaine</h3><p>Césaire, Senghor, Camara Laye - L'Enfant noir, Mongo Beti.</p><button class="btn ok" onclick="fini('Français Négro-Africaine')">✅ J'ai compris ! +10 points</button></div>
-<div id="f2" class="etape card"><h3>COURS 2 : Littérature Orale</h3><p>Contes, Proverbes, Épopées. Le griot = bibliothèque de l'Afrique.</p><button class="btn ok" onclick="fini('Français Orale')">✅ J'ai compris ! +10 points</button></div>
-<div id="f3" class="etape card"><h3>COURS 3 : L'Engagement</h3><p>Écrivain engagé = dénonce l'injustice. Exemple : Césaire.</p><button class="btn ok" onclick="fini('Français Engagement')">✅ J'ai compris ! +10 points</button></div>
-<div id="f4" class="etape card"><h3>⭐ L'ÉTUDIANT DE SOWETO - MULUBÉ</h3><p><b>AUTEUR : MAOUNDOÉ NAINDOUBA</b><br>TCHADIEN 🇹🇩 - Né 19 Mai 1948 à Bénoyé.<br><br><b>SOWETO ?</b> Quartier noir à Johannesburg. APARTHEID = Racisme.<br><br><b>MULUBÉ ?</b> Président du Syndicat des Étudiants de Soweto. Il refuse l'apartheid, organise la GRÈVE à 7h. Police tire. Mulubé disparaît.<br><br><b>SON PÈRE BAKUOLE :</b> <i>La liberté et le bonheur ne s'obtiennent pas sans sacrifice.</i><br><br><b>PHRASE 15/20 :</b> <i>Dans L'Étudiant de Soweto de Maoundoé Naindouba, Mulubé, président du syndicat des étudiants, refuse l'apartheid et organise la grève. Par son sacrifice, il nous montre que la liberté ne s'obtient pas sans sacrifice, et que la dignité vaut plus que la vie.</i></p><button class="btn ok" onclick="fini('Français Mulubé Soweto')">✅ J'AI COMPRIS MULUBÉ ! +20 points</button></div>
-<div id="f5" class="etape card"><h3>COURS : Tragédie du Roi Christophe - Aimé Césaire</h3><p>Christophe veut un pays libre pour les Noirs en Haïti, mais devient dictateur.</p><button class="btn ok" onclick="fini('Français Roi Christophe')">✅ J'ai compris ! +10 points</button></div>
+<button class="btn" style="background:#eee" onclick="showE('f5')">Roi Christophe</button>
+<button class="btn" style="background:#eee" onclick="showE('f6')">Figures de Style</button>
 </div>
 
-<div id="hist" class="page"><div class="card"><h2>🌍 HISTOIRE - TA4</h2>
-<button class="btn" style="background:#ffb800" onclick="showE('h1')">2GM + ONU</button>
+<!-- LITT ORALE -->
+<div id="f2a" class="etape show cardBlanc"><h3>📖 LITTÉRATURE ORALE - Chapitre Complet 1 : C'est quoi ?</h3><p><b>Définition :</b> Avant les livres, avant l'écriture, les Africains racontaient des histoires avec la BOUCHE. C'est ça la littérature orale. Elle se transmet de père en fils, de grand-mère à petit-fils, autour du feu le soir.<br><br><b>Pourquoi orale ?</b> Parce qu'il n'y avait pas d'école, pas de livres. La mémoire, c'était la bouche et l'oreille.<br><br><b>Les 3 genres principaux :</b><br>1. <b>Le Conte</b> - Histoire pour donner une leçon<br>2. <b>Le Proverbe</b> - Petite phrase de sagesse<br>3. <b>L'Épopée</b> - Grande histoire d'un héros<br><br><b>Le rôle :</b> Éduquer, faire rire, faire peur, garder la mémoire du village, unir la famille.<br><br><b>Phrase pour le BAC :</b> <i>"La littérature orale est la mémoire vivante de l'Afrique, transmise de bouche à oreille avant l'écriture."</i></p><button class="btnApp" onclick="fini('Français Litt Orale Définition')">✅ J'ai compris ! +10</button></div>
+<div id="f2b" class="etape cardBlanc"><h3>📖 LITTÉRATURE ORALE - Chapitre 2 : LE CONTE</h3><p><b>C'est quoi le conte ?</b> C'est une petite histoire, souvent avec des animaux qui parlent, pour donner une leçon de vie.<br><br><b>Les personnages :</b> Le lièvre (rusé), la hyène (méchante, bête), le lion (roi, fort), la tortue (lente mais intelligente).<br><br><b>Exemple de conte :</b> Le lièvre et la hyène vont au champ. La hyène veut tout manger seule. Le lièvre la trompe. Morale : <i>La ruse vaut mieux que la force.</i><br><br><b>La structure du conte :</b><br>1. <b>Début :</b> <i>"Il était une fois..."</i><br>2. <b>Problème :</b> Le héros a un problème<br>3. <b>Aventures :</b> Il essaie de résoudre<br>4. <b>Fin / Morale :</b> <i>"C'est pour cela que..."</i> + la leçon<br><br><b>Les fonctions du conte :</b> Faire rire, faire peur, éduquer l'enfant, critiquer les méchants sans les nommer.<br><br><b>Au BAC :</b> Si on te demande "Qu'est-ce qu'un conte ?", tu dis : Histoire courte, orale, avec animaux, avec une morale.</p><button class="btnApp" onclick="fini('Français Conte')">✅ J'ai compris ! +10</button></div>
+<div id="f2c" class="etape cardBlanc"><h3>📖 LITTÉRATURE ORALE - Chapitre 3 : LE PROVERBE</h3><p><b>C'est quoi un proverbe ?</b> C'est une petite phrase courte, que tout le monde connaît, qui donne une sagesse, un conseil.<br><br><b>Exemples à apprendre par cœur pour le BAC :</b><br>• <i>"Petit à petit, l'oiseau fait son nid."</i> = Il faut être patient, travailler chaque jour.<br>• <i>"Quand on n'a pas ce qu'on aime, il faut aimer ce qu'on a."</i><br>• <i>"L'union fait la force."</i> = Seul on est faible, ensemble on est fort. Comme Mulubé et les étudiants !<br>• <i>"Qui sème le vent récolte la tempête."</i><br>• <i>"La patience est un arbre dont la racine est amère, mais le fruit est doux."</i><br><br><b>Pourquoi les proverbes ?</b> Pour éduquer sans faire de long discours. Une phrase, et on a compris.<br><br><b>Au BAC :</b> Tu peux mettre un proverbe dans ta dissertation pour avoir +2 points ! Exemple : Pour parler du travail, tu écris : <i>"Comme le dit le proverbe, petit à petit, l'oiseau fait son nid."</i></p><button class="btnApp" onclick="fini('Français Proverbe')">✅ J'ai compris ! +10</button></div>
+<div id="f2d" class="etape cardBlanc"><h3>📖 LITTÉRATURE ORALE - Chapitre 4 : L'ÉPOPÉE + LE GRIOT</h3><p><b>L'Épopée :</b> C'est une très grande histoire, très longue, qui raconte la vie d'un HÉROS, d'un roi, d'un grand guerrier.<br><br><b>Exemple célèbre : L'Épopée de Soundiata Keïta</b> - Soundiata, enfant qui ne marchait pas, devient roi du Mali, bat Soumaoro Kanté. C'est l'histoire du Mali.<br><br><b>Les caractéristiques de l'épopée :</b> Héros extraordinaire, batailles, magie, merveilleux, longue histoire.<br><br><b>LE GRIOT :</b><br>• C'est qui ? C'est l'homme qui connaît toutes les histoires du village. Il chante, il joue du tam-tam, il raconte.<br>• On l'appelle : <i>"La bibliothèque de l'Afrique"</i>, <i>"La mémoire du village"</i>.<br>• Son rôle : Raconter l'histoire des rois, chanter les mariages, conseiller le chef, éduquer les enfants.<br>• Sans griot, on oublie l'histoire. Avec le griot, on se souvient.<br><br><b>Phrase BAC :</b> <i>"Le griot est la bibliothèque vivante de l'Afrique, il transmet l'histoire par la parole."</i></p><button class="btnApp" onclick="fini('Français Épopée Griot')">✅ J'ai compris ! +10</button></div>
+
+<!-- NEGRO-AFRICAINE -->
+<div id="f1a" class="etape cardBlanc"><h3>📖 NÉGRO-AFRICAINE - Chapitre 1 : C'est quoi ? La NÉGRITUDE</h3><p><b>Définition :</b> La littérature négro-africaine, c'est la littérature écrite par les Noirs, les Africains, pour raconter leur histoire, dénoncer le colonialisme, et dire "On est fiers d'être Noirs !"<br><br><b>La NÉGRITUDE :</b> C'est le mot le plus important ! Créé par Césaire, Senghor, Damas en 1930 à Paris.<br><br><b>Négritude =</b><br>1. Être fier d'être Noir, d'être Africain<br>2. Ne pas avoir honte de sa couleur, de sa langue, de sa culture<br>3. Dénoncer le racisme et le colonialisme<br>4. Montrer que l'Afrique a une grande culture, pas seulement l'Europe<br><br><b>Pourquoi ?</b> Parce que les Blancs disaient "Les Noirs n'ont pas d'histoire, pas de culture". Les écrivains noirs répondent : "Si, on a une grande histoire !"<br><br><b>Les thèmes :</b> L'identité noire, la colonisation, l'Afrique, la souffrance, l'espoir, la liberté.<br><br><b>Phrase BAC :</b> <i>"La Négritude est l'affirmation de l'identité noire et la dénonciation du colonialisme."</i></p><button class="btnApp" onclick="fini('Français Négritude')">✅ J'ai compris ! +10</button></div>
+<div id="f1b" class="etape cardBlanc"><h3>📖 NÉGRO-AFRICAINE - Chapitre 2 : AIMÉ CÉSAIRE</h3><p><b>Qui ?</b> Aimé Césaire, né en 1913 à la Martinique. Poète, homme politique. Le père de la Négritude.<br><br><b>Son livre le plus célèbre : <i>Cahier d'un retour au pays natal</i> (1939)</b><br>Il retourne en Martinique, il voit son peuple souffrir, il dit "Je suis Noir, je suis fier !"<br><br><b>Ce qu'il dénonce :</b> Le colonialisme, le racisme, l'esclavage. Les Blancs qui méprisent les Noirs.<br><br><b>Son style :</b> Poésie violente, forte, avec des images, des cris. Il écrit comme un combat.<br><br><b>Autres œuvres :</b> <i>Discours sur le colonialisme</i>, <i>La Tragédie du Roi Christophe</i>.<br><br><b>Citation à apprendre :</b> <i>"Ma négritude n'est pas une pierre, sa surdité ruée contre la clameur du jour..."</i><br><br><b>Au BAC :</b> Si on te parle de Césaire, tu dis : Négritude + Cahier d'un retour au pays natal + Dénonce le colonialisme.</p><button class="btnApp" onclick="fini('Français Césaire')">✅ J'ai compris ! +10</button></div>
+<div id="f1c" class="etape cardBlanc"><h3>📖 NÉGRO-AFRICAINE - Chapitre 3 : LÉOPOLD SÉDAR SENGHOR</h3><p><b>Qui ?</b> Senghor, né en 1906 au Sénégal. Poète, premier président du Sénégal en 1960.<br><br><b>Sa vision de la Négritude :</b> Pour Senghor, la Négritude, c'est l'émotion, le rythme, la musique, la danse. <i>"L'émotion est nègre, comme la raison est hellène."</i><br><br><b>Ses livres :</b> <i>Chants d'ombre</i>, <i>Hosties noires</i>, <i>Éthiopiques</i>.<br><br><b>Il chante :</b> L'Afrique, sa mère, son village, les femmes noires, la beauté noire.<br><br><b>Différence avec Césaire :</b> Césaire = révolte, colère. Senghor = douceur, poésie, chant.<br><br><b>Citation :</b> <i>"Femme noire, femme africaine, ô toi ma mère..."</i><br><br><b>Au BAC :</b> Senghor = Poète de la Négritude, président du Sénégal, chante l'Afrique.</p><button class="btnApp" onclick="fini('Français Senghor')">✅ J'ai compris ! +10</button></div>
+<div id="f1d" class="etape cardBlanc"><h3>📖 NÉGRO-AFRICAINE - Chapitre 4 : CAMARA LAYE - L'ENFANT NOIR</h3><p><b>Qui ?</b> Camara Laye, né en 1928 en Guinée. Écrivain guinéen.<br><br><b>Son livre : <i>L'Enfant noir</i> (1953) - LE livre le plus lu au BAC !</b><br><br><b>L'histoire :</b> C'est l'histoire de Baba, un petit garçon en Guinée. Il grandit dans son village, avec son père forgeron, sa mère, ses amis. Il va à l'école, il apprend, il part en France pour étudier. Il est triste de quitter son village, mais il doit apprendre.<br><br><b>Les thèmes :</b> L'enfance, la famille, l'école, le village, la tradition contre la modernité.<br><br><b>Pourquoi ce livre est important ?</b> Parce qu'il montre la vraie vie en Afrique, pas seulement la souffrance. La joie, la famille, la fête.<br><br><b>Au BAC :</b> Si on te demande "L'Enfant noir", tu dis : Camara Laye, enfance en Guinée, village, école, tradition vs modernité.</p><button class="btnApp" onclick="fini('Français Camara Laye')">✅ J'ai compris ! +10</button></div>
+<div id="f1e" class="etape cardBlanc"><h3>📖 NÉGRO-AFRICAINE - Chapitre 5 : MONGO BETI + AUTRES</h3><p><b>Mongo Beti :</b> Écrivain camerounais. Livre : <i>Ville cruelle</i>. Il dénonce la ville coloniale, où les Blancs exploitent les Noirs. Il montre la souffrance des jeunes en ville.<br><br><b>Autres auteurs à connaître pour le BAC :</b><br>• <b>Cheikh Hamidou Kane</b> - <i>L'Aventure ambiguë</i> : Un jeune Africain part étudier en France, il est perdu entre 2 cultures.<br>• <b>Ousmane Sembène</b> - <i>Les Bouts de bois de Dieu</i> : Grève des cheminots au Sénégal, les travailleurs se battent pour leurs droits.<br>• <b>Mariama Bâ</b> - <i>Une si longue lettre</i> : Femme sénégalaise qui parle de la polygamie, de la souffrance des femmes.<br><br><b>Le point commun :</b> Tous dénoncent l'injustice, tous sont fiers d'être Africains, tous veulent une Afrique libre.<br><br><b>Conseil BAC :</b> Apprends 3 auteurs + 3 livres. C'est suffisant pour avoir 15/20 !</p><button class="btnApp" onclick="fini('Français Mongo Beti')">✅ J'ai compris ! +10</button></div>
+
+<div id="f3" class="etape cardBlanc"><h3>L'Engagement</h3><p>Écrivain engagé = dénonce l'injustice. Exemple : Césaire, Maoundoé Naindouba. <i>"L'écrivain engagé met sa plume au service de la justice."</i></p><button class="btnApp" onclick="fini('Français Engagement')">✅ J'ai compris ! +10</button></div>
+<div id="f4" class="etape cardBlanc"><h3>⭐ L'ÉTUDIANT DE SOWETO - MULUBÉ</h3><p><b>AUTEUR : MAOUNDOÉ NAINDOUBA</b><br>TCHADIEN 🇹🇩 - Né 19 Mai 1948 à Bénoyé.<br><br><b>SOWETO ?</b> Quartier noir à Johannesburg. APARTHEID = Racisme.<br><br><b>MULUBÉ ?</b> Président du Syndicat des Étudiants de Soweto. Il refuse l'apartheid, organise la GRÈVE à 7h. Police tire. Mulubé disparaît.<br><br><b>SON PÈRE BAKUOLE :</b> <i>La liberté et le bonheur ne s'obtiennent pas sans sacrifice.</i><br><br><b>PHRASE 15/20 :</b> <i>Dans L'Étudiant de Soweto de Maoundoé Naindouba, Mulubé, président du syndicat des étudiants, refuse l'apartheid et organise la grève. Par son sacrifice, il nous montre que la liberté ne s'obtient pas sans sacrifice, et que la dignité vaut plus que la vie.</i></p><button class="btnApp" style="background:#e91e63" onclick="fini('Français Mulubé Soweto')">✅ J'AI COMPRIS MULUBÉ ! +20</button></div>
+<div id="f5" class="etape cardBlanc"><h3>Roi Christophe - Césaire</h3><p>Christophe veut un pays libre pour les Noirs en Haïti, mais devient dictateur. Leçon : Même quand on veut le bien, si on devient injuste, on échoue.</p><button class="btnApp" onclick="fini('Français Roi Christophe')">✅ J'ai compris ! +10</button></div>
+<div id="f6" class="etape cardBlanc"><h3>📖 FIGURES DE STYLE - Pour le BAC !</h3><p><b>À apprendre par cœur :</b><br>• <b>Comparaison :</b> <i>Fort comme un lion</i> - avec "comme"<br>• <b>Métaphore :</b> <i>C'est un lion</i> - sans "comme"<br>• <b>Personnification :</b> <i>Le vent chante</i> - on donne vie à une chose<br>• <b>Hyperbole :</b> <i>J'ai mille fois raison</i> - on exagère<br>• <b>Anaphore :</b> On répète le même mot au début des phrases<br><br><b>Conseil :</b> Dans ton commentaire, trouve 3 figures, explique-les, tu auras des points !</p><button class="btnApp" onclick="fini('Français Figures de Style')">✅ J'ai compris ! +10</button></div></div>
+
+<!-- ================= HISTOIRE - 2GM COMPLETE ================= -->
+<div id="page-hist" class="page"><h2>🌍 HISTOIRE - TA4</h2>
+<div class="cardBlanc">
+<div class="sousTitre">🌍 CHAPITRE COMPLET : 2ème GUERRE MONDIALE</div>
+<button class="btn" style="background:#ffb800" onclick="showE('h1a')">1. Causes de la 2GM</button>
+<button class="btn" style="background:#eee" onclick="showE('h1b')">2. Déroulement 1939-1945</button>
+<button class="btn" style="background:#eee" onclick="showE('h1c')">3. Bilan + Conséquences</button>
+<button class="btn" style="background:#eee" onclick="showE('h1d')">4. Naissance de l'ONU</button>
+<div class="sousTitre">🌍 AUTRES CHAPITRES</div>
 <button class="btn" style="background:#eee" onclick="showE('h2')">Guerre Froide</button>
 <button class="btn" style="background:#eee" onclick="showE('h3')">Décolonisation</button>
-<button class="btn" style="background:#eee" onclick="showE('h4')">Tchad + UA</button></div>
-<div id="h1" class="etape show card"><h3>COURS 1 : Bilan 2GM + Naissance ONU</h3><p>50 millions de morts. ONU 1945, siège New York.</p><button class="btn ok" onclick="fini('Histoire 2GM ONU')">✅ J'ai compris ! +10 points</button></div>
-<div id="h2" class="etape card"><h3>COURS 2 : Guerre Froide 1947-1991</h3><p>USA vs URSS. 1989 Mur de Berlin tombe.</p><button class="btn ok" onclick="fini('Histoire Guerre Froide')">✅ J'ai compris ! +10 points</button></div>
-<div id="h3" class="etape card"><h3>COURS 3 : Décolonisation en Afrique</h3><p>1960 Année de l'Afrique. 11 Août 1960 Tchad indépendant.</p><button class="btn ok" onclick="fini('Histoire Décolonisation')">✅ J'ai compris ! +10 points</button></div>
-<div id="h4" class="etape card"><h3>COURS 4 : Tchad + Union Africaine</h3><p>Tchad colonisé 1900, indépendance 11 Août 1960. UA créée 2002.</p><button class="btn ok" onclick="fini('Histoire Tchad UA')">✅ J'ai compris ! +10 points</button></div>
+<button class="btn" style="background:#eee" onclick="showE('h4')">Tchad + UA</button>
 </div>
 
-<div id="geo" class="page"><div class="card"><h2>🗺️ GÉOGRAPHIE - Terminale A4</h2>
-<button class="btn" style="background:#00c853;color:white" onclick="showE('g1')">Tchad Physique</button>
-<button class="btn" style="background:#eee" onclick="showE('g2')">Population + Économie</button>
-<button class="btn" style="background:#eee" onclick="showE('g3')">Puissances + Mondialisation</button>
-<button class="btn" style="background:#eee" onclick="showE('g4')">CEMAC + Lac Tchad</button></div>
-<div id="g1" class="etape show card"><h3>COURS 1 : Tchad - Milieu Naturel</h3><p>1.284.000 km², sans mer. Tibesti, Emi Koussi 3.415m.</p><button class="btn ok" onclick="fini('Géo Tchad Physique')">✅ J'ai compris ! +10 points</button></div>
-<div id="g2" class="etape card"><h3>COURS 2 : Population + Économie</h3><p>18 millions, très jeunes. Coton, arachide, mil, élevage, pétrole Doba 2003.</p><button class="btn ok" onclick="fini('Géo Population Économie')">✅ J'ai compris ! +10 points</button></div>
-<div id="g3" class="etape card"><h3>COURS 3 : Grandes Puissances</h3><p>USA 1ère, CHINE 2ème, UE 27 pays.</p><button class="btn ok" onclick="fini('Géo Puissances')">✅ J'ai compris ! +10 points</button></div>
-<div id="g4" class="etape card"><h3>COURS 4 : CEMAC + Bassin Lac Tchad</h3><p>CEMAC 6 pays, Franc CFA.</p><button class="btn ok" onclick="fini('Géo CEMAC')">✅ J'ai compris ! +10 points</button></div>
-</div>
+<div id="h1a" class="etape show cardBlanc"><h3>🌍 2GM - Chapitre 1 : LES CAUSES - Pourquoi la guerre ?</h3><p><b>1. Le Traité de Versailles (1919) :</b> Après la 1ère Guerre Mondiale, on punit l'Allemagne très fort. On lui prend des terres, on lui demande beaucoup d'argent. Les Allemands sont en colère. Hitler dit : "On va se venger !"<br><br><b>2. La crise de 1929 :</b> Grande crise économique dans le monde. Pas de travail, pas d'argent, les gens ont faim. Ils écoutent les dictateurs qui promettent du travail.<br><br><b>3. Les dictateurs arrivent :</b><br>• <b>Hitler</b> en Allemagne (1933) - Il veut agrandir l'Allemagne<br>• <b>Mussolini</b> en Italie - Il veut un grand empire<br>• <b>Le Japon</b> veut prendre la Chine<br><br><b>4. L'échec de la SDN :</b> La Société des Nations, créée pour garder la paix, est trop faible. Elle ne peut pas arrêter Hitler.<br><br><b>5. Le déclencheur :</b> Le 1er Septembre 1939, Hitler envahit la Pologne. La France et l'Angleterre déclarent la guerre à l'Allemagne. C'est le début de la 2GM.<br><br><b>À retenir :</b> Causes = Versailles + Crise 1929 + Dictateurs + Échec SDN + Invasion Pologne 1939.</p><button class="btnApp" onclick="fini('Histoire Causes 2GM')">✅ J'ai compris ! +10</button></div>
+<div id="h1b" class="etape cardBlanc"><h3>🌍 2GM - Chapitre 2 : DÉROULEMENT 1939-1945</h3><p><b>Les 2 camps :</b><br>• <b>Axe :</b> Allemagne, Italie, Japon<br>• <b>Alliés :</b> France, Angleterre, URSS, USA (après 1941)<br><br><b>Les grandes étapes :</b><br><br><b>1. 1939-1940 : Victoires de l'Axe</b><br>Hitler prend la Pologne, la France, la Belgique. La France est occupée. Le Général de Gaulle dit à la radio : "La France a perdu une bataille, mais elle n'a pas perdu la guerre !"<br><br><b>2. 1941 : La guerre devient mondiale</b><br>• Hitler attaque l'URSS (Juin 1941)<br>• Le Japon attaque Pearl Harbor, USA (Décembre 1941). Les USA entrent en guerre.<br><br><b>3. 1942-1943 : Le tournant</b><br>• Bataille de Stalingrad (1942-1943) : Les Russes battent les Allemands. C'est le tournant.<br>• Bataille d'El Alamein en Afrique : Les Alliés battent les Allemands.<br><br><b>4. 1944-1945 : La victoire des Alliés</b><br>• 6 Juin 1944 : Débarquement en Normandie. Les Alliés débarquent en France.<br>• Avril 1945 : Hitler se suicide à Berlin.<br>• 8 Mai 1945 : L'Allemagne se rend. Fin de la guerre en Europe.<br>• 6 Août 1945 : Bombe atomique sur Hiroshima. 9 Août sur Nagasaki.<br>• 2 Septembre 1945 : Le Japon se rend. Fin de la 2GM.<br><br><b>Dates à retenir :</b> 1 Sept 1939 = Début. 8 Mai 1945 = Fin en Europe. 2 Sept 1945 = Fin totale.</p><button class="btnApp" onclick="fini('Histoire Déroulement 2GM')">✅ J'ai compris ! +10</button></div>
+<div id="h1c" class="etape cardBlanc"><h3>🌍 2GM - Chapitre 3 : BILAN + CONSÉQUENCES</h3><p><b>Bilan humain : TERRIBLE</b><br>• Environ 50 à 60 millions de morts, dont 6 millions de Juifs tués dans l'Holocauste (Shoah).<br>• Des millions de blessés, d'orphelins, de réfugiés.<br>• Villes détruites : Berlin, Londres, Hiroshima, Stalingrad.<br><br><b>Bilan économique :</b><br>• L'Europe est ruinée, tout est à reconstruire.<br>• Les USA deviennent la 1ère puissance du monde, ils sont riches.<br>• L'URSS aussi devient très puissante, mais elle a beaucoup souffert.<br><br><b>Bilan politique :</b><br>• L'Allemagne est divisée en 2 : Ouest (capitaliste) et Est (communiste).<br>• Le monde est divisé en 2 : USA vs URSS. C'est le début de la Guerre Froide.<br>• Les colonies veulent être libres. C'est le début de la décolonisation.<br><br><b>Bilan moral :</b><br>• On crée le Tribunal de Nuremberg pour juger les criminels nazis.<br>• On dit : "Plus jamais ça !"<br>• On crée l'ONU pour garder la paix.<br><br><b>Phrase BAC :</b> <i>"La 2GM est la guerre la plus meurtrière de l'histoire, avec 50 millions de morts, elle change le monde et donne naissance à l'ONU et à la Guerre Froide."</i></p><button class="btnApp" onclick="fini('Histoire Bilan 2GM')">✅ J'ai compris ! +10</button></div>
+<div id="h1d" class="etape cardBlanc"><h3>🌍 2GM - Chapitre 4 : NAISSANCE DE L'ONU</h3><p><b>C'est quoi l'ONU ?</b> Organisation des Nations Unies. Créée le 24 Octobre 1945 à San Francisco, siège à New York.<br><br><b>Pourquoi ?</b> Pour ne plus jamais avoir de guerre mondiale. Pour garder la paix, aider les pays pauvres, défendre les droits de l'homme.<br><br><b>Les organes de l'ONU :</b><br>• <b>Assemblée Générale :</b> Tous les pays se réunissent, 1 pays = 1 voix.<br>• <b>Conseil de Sécurité :</b> 15 membres, 5 permanents avec droit de veto : USA, Russie, Chine, France, Angleterre. C'est lui qui décide d'envoyer des soldats de la paix.<br>• <b>Secrétaire Général :</b> Le chef de l'ONU.<br>• <b>UNESCO :</b> Pour l'éducation, la culture.<br>• <b>OMS :</b> Pour la santé.<br>• <b>UNICEF :</b> Pour les enfants.<br><br><b>Les réussites :</b> Elle a aidé à éviter une 3ème Guerre Mondiale, elle aide les réfugiés, les enfants.<br><br><b>Les limites :</b> Le droit de veto bloque parfois les décisions. Les grandes puissances font ce qu'elles veulent.<br><br><b>À retenir :</b> ONU créée 1945, siège New York, but = Paix.</p><button class="btnApp" onclick="fini('Histoire ONU')">✅ J'ai compris ! +10</button></div>
+<div id="h2" class="etape cardBlanc"><h3>Guerre Froide 1947-1991</h3><p>USA vs URSS. 1989 Mur de Berlin tombe. 1991 URSS disparaît.</p><button class="btnApp" onclick="fini('Histoire Guerre Froide')">✅ J'ai compris ! +10</button></div>
+<div id="h3" class="etape cardBlanc"><h3>Décolonisation</h3><p>1960 Année de l'Afrique. 11 Août 1960 Tchad indépendant. Leaders : Nkrumah, Senghor, Tombalbaye.</p><button class="btnApp" onclick="fini('Histoire Décolonisation')">✅ J'ai compris ! +10</button></div>
+<div id="h4" class="etape cardBlanc"><h3>Tchad + UA</h3><p>Tchad colonisé 1900, indépendance 11 Août 1960. UA créée 2002 à Durban.</p><button class="btnApp" onclick="fini('Histoire Tchad UA')">✅ J'ai compris ! +10</button></div></div>
 
-<div id="meth" class="page"><div class="card"><h2>📝 MÉTHODE - Comment traiter un sujet</h2>
-<button class="btn" style="background:#ff6d00;color:white" onclick="showE('m1')">Philo Dissertation</button>
-<button class="btn" style="background:#eee" onclick="showE('m2')">Français Dissertation</button>
-<button class="btn" style="background:#eee" onclick="showE('m3')">Commentaire Composé</button>
-<button class="btn" style="background:#eee" onclick="showE('m4')">Exemple Philo 2024</button>
-<button class="btn" style="background:#e91e63;color:white" onclick="showE('m5')">Exemple Mulubé</button></div>
-<div id="m1" class="etape show card"><h3>🧠 PHILO - DISSERTATION</h3><p>INTRO 4 phrases : Accroche, Définition, Problème, Plan. DÉVELOPPEMENT : I THÈSE OUI, II ANTITHÈSE NON, III SYNTHÈSE. CONCLUSION : En définitive...</p></div>
-<div id="m2" class="etape card"><h3>📖 FRANÇAIS - DISSERTATION</h3><p>Même méthode que Philo, mais avec exemples de LIVRES !</p></div>
-<div id="m3" class="etape card"><h3>📖 COMMENTAIRE COMPOSÉ</h3><p>Lis 3 fois. Trouve 2 AXES. Pour chaque Axe : IDÉE + CITATION + EXPLICATION.</p></div>
-<div id="m4" class="etape card"><h3>✍️ EXEMPLE COMPLET - PHILO BAC 2024</h3><p>Sujet : Philosopher, c'est comprendre que nul n'a le monopole de la philosophie.</p></div>
-<div id="m5" class="etape card"><h3>⭐ EXEMPLE COMPLET - MULUBÉ AU BAC</h3><p>Sujet : La liberté s'obtient-elle sans sacrifice ? I OUI : Mulubé se sacrifie. II NON : Il faut aussi s'organiser. III SYNTHÈSE : Sacrifice intelligent et collectif.</p></div>
-</div>
+<!-- GEO -->
+<div id="page-geo" class="page"><h2>🗺️ GÉOGRAPHIE - TA4</h2><div class="cardBlanc"><button class="btn" style="background:#00c853;color:white" onclick="showE('g1')">Tchad Physique</button><button class="btn" style="background:#eee" onclick="showE('g2')">Population + Éco</button><button class="btn" style="background:#eee" onclick="showE('g3')">Puissances</button><button class="btn" style="background:#eee" onclick="showE('g4')">CEMAC</button></div>
+<div id="g1" class="etape show cardBlanc"><h3>Tchad - Milieu Naturel</h3><p>1.284.000 km², sans mer. Tibesti, Emi Koussi 3.415m. Nord désert, Centre Sahel, Sud savane. Lac Tchad diminue.</p><button class="btnApp" onclick="fini('Géo Tchad Physique')">✅ J'ai compris ! +10</button></div>
+<div id="g2" class="etape cardBlanc"><h3>Population + Économie</h3><p>18 millions, très jeunes. Coton, arachide, mil, élevage, pétrole Doba 2003.</p><button class="btnApp" onclick="fini('Géo Population Économie')">✅ J'ai compris ! +10</button></div>
+<div id="g3" class="etape cardBlanc"><h3>Grandes Puissances</h3><p>USA 1ère, CHINE 2ème, UE 27 pays. Mondialisation = monde connecté.</p><button class="btnApp" onclick="fini('Géo Puissances')">✅ J'ai compris ! +10</button></div>
+<div id="g4" class="etape cardBlanc"><h3>CEMAC + Lac Tchad</h3><p>CEMAC 6 pays, Franc CFA. Bassin Lac Tchad : Tchad, Niger, Nigeria, Cameroun.</p><button class="btnApp" onclick="fini('Géo CEMAC')">✅ J'ai compris ! +10</button></div></div>
 
-<div id="quiz" class="page"><div class="card"><h2>🎯 QUIZ BAC A4 - AVEC MULUBÉ !</h2><p id="score">Score : 0 / 8</p><p>Chaque bonne réponse = +5 points pour le Classement !</p></div>
+<!-- ANGLAIS / ARABE / METH / QUIZ / ANNALES / PLAN / NOTES / CHAMP -->
+<div id="page-anglais" class="page"><h2>🇬🇧 ANGLAIS</h2><div class="cardBlanc"><h3>Essay</h3><p>Introduction - 2 arguments - Conclusion. <i>Education is the key to success.</i> Vocabulaire : Freedom, Sacrifice, Courage, Justice, Peace.</p><button class="btnApp" onclick="fini('Anglais Essay')">✅ J'ai compris ! +10</button></div><div class="cardBlanc"><h3>Compréhension</h3><p>Lis 2 fois. Souligne les mots que tu connais. Réponds avec les mots du texte.</p><button class="btnApp" onclick="fini('Anglais Compréhension')">✅ J'ai compris ! +10</button></div></div>
+<div id="page-arabe" class="page"><h2>📖 ARABE</h2><div class="cardBlanc"><h3>Lecture + Grammaire</h3><p>Lis 10 minutes par jour. Liberté = الحرية. Courage = الشجاعة. Sacrifice = التضحية.</p><button class="btnApp" onclick="fini('Arabe Lecture')">✅ J'ai compris ! +10</button></div></div>
+<div id="page-cours" class="page"><h2>📚 Tous les Cours</h2><div class="cardBlanc"><button class="btnApp" onclick="ouvrirPage('philo')">🧠 Philo →</button><button class="btnApp" style="background:#2aa5ff" onclick="ouvrirPage('fr')">📖 Français →</button><button class="btnApp" style="background:#ffb800;color:black" onclick="ouvrirPage('hist')">🌍 Histoire →</button><button class="btnApp" style="background:#00c853" onclick="ouvrirPage('geo')">🗺️ Géo →</button></div></div>
+<div id="page-meth" class="page"><h2>📝 MÉTHODE BAC</h2><div class="cardBlanc"><button class="btn" style="background:#ff6d00;color:white" onclick="showE('m1')">Philo Dissertation</button><button class="btn" style="background:#eee" onclick="showE('m2')">Français Dissertation</button><button class="btn" style="background:#eee" onclick="showE('m3')">Commentaire</button><button class="btn" style="background:#eee" onclick="showE('m4')">Exemple Philo 2024</button><button class="btn" style="background:#e91e63;color:white" onclick="showE('m5')">Exemple Mulubé</button></div>
+<div id="m1" class="etape show cardBlanc"><h3>PHILO - DISSERTATION</h3><p>INTRO : Accroche, Définition, Problème, Plan. DÉVELOPPEMENT : I THÈSE, II ANTITHÈSE, III SYNTHÈSE. CONCLUSION : En définitive...</p></div>
+<div id="m2" class="etape cardBlanc"><h3>FRANÇAIS - DISSERTATION</h3><p>Même méthode, mais avec exemples de LIVRES !</p></div>
+<div id="m3" class="etape cardBlanc"><h3>COMMENTAIRE COMPOSÉ</h3><p>Lis 3 fois. Trouve 2 AXES. Pour chaque Axe : IDÉE + CITATION + EXPLICATION.</p></div>
+<div id="m4" class="etape cardBlanc"><h3>EXEMPLE PHILO BAC 2024</h3><p>Sujet : Philosopher, c'est comprendre que nul n'a le monopole de la philosophie.</p></div>
+<div id="m5" class="etape cardBlanc"><h3>EXEMPLE MULUBÉ AU BAC</h3><p>Sujet : La liberté s'obtient-elle sans sacrifice ? I OUI : Mulubé se sacrifie. II NON : Il faut aussi s'organiser. III SYNTHÈSE : Sacrifice intelligent et collectif.</p></div></div>
+<div id="page-quiz" class="page"><h2>🎯 QUIZ BAC A4</h2><div class="cardBlanc"><p id="score">Score : 0 / 8</p><p>Chaque bonne réponse = +5 points !</p></div>
 <div class="q"><b>1. Je pense donc je suis, c'est qui ?</b><br><button class="btn" onclick="rep(this,1)">Descartes ✅</button><button class="btn" onclick="rep(this,0)">Sartre</button></div>
 <div class="q"><b>2. Le Tchad est indépendant en ?</b><br><button class="btn" onclick="rep(this,0)">1945</button><button class="btn" onclick="rep(this,1)">1960 ✅</button></div>
 <div class="q"><b>3. Fort comme un lion, c'est ?</b><br><button class="btn" onclick="rep(this,1)">Comparaison ✅</button><button class="btn" onclick="rep(this,0)">Métaphore</button></div>
@@ -132,80 +153,43 @@ td{padding:10px;border-bottom:1px solid #eee;font-size:14px}
 <div class="q"><b>6. Siège de l'ONU ?</b><br><button class="btn" onclick="rep(this,0)">Paris</button><button class="btn" onclick="rep(this,1)">New York ✅</button></div>
 <div class="q"><b>7. Qui est Mulubé ?</b><br><button class="btn" onclick="rep(this,1)">Président des Étudiants de Soweto ✅</button><button class="btn" onclick="rep(this,0)">Président du Tchad</button></div>
 <div class="q"><b>8. L'auteur de L'Étudiant de Soweto ?</b><br><button class="btn" onclick="rep(this,0)">Aimé Césaire</button><button class="btn" onclick="rep(this,1)">Maoundoé Naindouba ✅</button></div>
-<button class="btn" style="background:black;color:white" onclick="location.reload()">🔄 Recommencer</button></div>
+<button class="btnApp" style="background:black" onclick="location.reload()">🔄 Recommencer</button></div>
+<div id="page-annales" class="page"><h2>📜 ANNALES BAC</h2><div class="cardBlanc"><button class="btn" style="background:#8e24aa;color:white" onclick="showE('a2024')">BAC 2024 - PHILO</button><button class="btn" style="background:#eee" onclick="showE('a2016')">BAC 2016 - PHILO</button></div>
+<div id="a2024" class="etape show cardBlanc"><h3>BAC 2024 - Philo - 4H</h3><p><b>SUJET 1 :</b> Philosopher, c'est comprendre que nul n'a le monopole de la philosophie.<br><br><b>SUJET 2 :</b> MALTHUS : Le facteur essentiel du développement n'est pas le capital, mais le savoir des hommes.</p><button class="btnApp" onclick="alert('Fais ce sujet en 4h !')">✍️ JE TRAITE CE SUJET</button></div>
+<div id="a2016" class="etape cardBlanc"><h3>BAC 2016 - Philo</h3><p><b>SUJET 1 :</b> Est-il légitime d'avoir recours à la violence pour défendre ses droits ?</p><button class="btnApp" onclick="alert('Fais ce sujet en 4h !')">✍️ JE TRAITE CE SUJET</button></div></div>
+<div id="page-plan" class="page"><h2>📅 EMPLOI DU TEMPS - TA4</h2><div class="cardBlanc" style="background:#0b2e59;color:white;text-align:center"><h2>📅 TA4 - DINGUESSOU</h2><p>Création par Hamid Salah</p></div>
+<table><tr><th>JOUR</th><th>MATIÈRES</th><th>TOTAL</th></tr><tr><td class="jour">Lundi</td><td>Philo 1h • Français 2h • Arabe 2h</td><td class="total">5h</td></tr><tr><td class="jour">Mardi</td><td>Philo 2h • Anglais 1h • Histoire 2h</td><td class="total">5h</td></tr><tr><td class="jour">Mercredi</td><td>Français 2h • Philo 2h • Géo 1h</td><td class="total">5h</td></tr><tr><td class="jour">Jeudi</td><td>Philo 1h • Arabe 2h • Histoire 1h</td><td class="total">4h</td></tr><tr><td class="jour">Vendredi</td><td>Anglais 1h • Français 2h • Géo 2h</td><td class="total">5h</td></tr><tr><td class="jour">Samedi</td><td>EPS 1h • Philo 2h • Français 2h</td><td class="total">5h</td></tr><tr><td class="jour">Dimanche ❤️</td><td>REPOS</td><td class="total">❤️</td></tr></table></div>
+<div id="page-notes" class="page"><h2>📝 MES NOTES - HAMID SALAH</h2><div class="cardBlanc" style="background:#fce4ec;border:3px solid #e91e63;text-align:center"><h2>📝 MON CAHIER</h2><p>Ça reste dans TON téléphone ! ❤️</p></div>
+<div class="cardBlanc"><h3>✏️ Ton nom : Hamid Salah</h3><input id="monNom" placeholder="Hamid Salah" onchange="sauveNom()"></div>
+<div class="cardBlanc"><h3>📖 Philo</h3><textarea id="notePhilo" rows="4" placeholder="Descartes = Je pense donc je suis..."></textarea><button class="btnApp" style="background:#7c4dff" onclick="sauveNotes()">💾 SAUVEGARDER PHILO</button></div>
+<div class="cardBlanc"><h3>📖 Français / Mulubé</h3><textarea id="noteFr" rows="4" placeholder="Mulubé = Président des Étudiants de Soweto..."></textarea><button class="btnApp" style="background:#2aa5ff" onclick="sauveNotes()">💾 SAUVEGARDER FRANÇAIS</button></div>
+<div class="cardBlanc"><h3>📖 Histoire / Géo</h3><textarea id="noteHist" rows="4" placeholder="Tchad indépendant 11 Août 1960..."></textarea><button class="btnApp" style="background:#ffb800;color:black" onclick="sauveNotes()">💾 SAUVEGARDER HISTOIRE / GÉO</button></div>
+<div class="cardBlanc"><h3>📖 Tout !</h3><textarea id="noteLibre" rows="5" placeholder="Demain je révise Mulubé + Philo"></textarea><button class="btnApp" style="background:#00e676;color:black" onclick="sauveNotes()">💾 SAUVEGARDER TOUT</button><button class="btnApp" style="background:#ff5252" onclick="effaceNotes()">🗑️ Effacer</button><p id="msgNotes" style="color:#00a651;font-weight:900"></p></div></div>
+<div id="page-champ" class="page"><h2>🏆 CHAMPIONS</h2><div class="cardBlanc" style="background:gold;text-align:center;border:3px solid black"><h2>🏆 CLASSEMENT</h2><p>Cours = +10 | Quiz = +5 | Mulubé = +20 !</p></div>
+<div class="cardBlanc"><h3>⭐ TOI : HAMID SALAH</h3><p id="mespoints2" style="font-size:20px;font-weight:900">⭐ 0 points - 0 cours finis</p></div>
+<div class="cardBlanc"><div class="champ"><div class="rank">🥇</div><div><b>HAMID SALAH 👑</b><br><small>Créateur - TA4</small></div><div style="margin-left:auto;font-weight:900;color:gold">500 pts</div></div><div class="champ"><div class="rank">🥈</div><div><b>MULUBÉ ⭐</b><br><small>Héros de Soweto</small></div><div style="margin-left:auto;font-weight:900">400 pts</div></div><div class="champ"><div class="rank">🥉</div><div><b>CHAMPION TA4</b><br><small>Finis 10 cours !</small></div><div style="margin-left:auto;font-weight:900">200 pts</div></div></div></div>
+<div id="page-reglages" class="page"><h2>⚙️ Réglages</h2><div style="text-align:center;background:#1a1a1a;border-radius:20px;padding:20px"><div style="width:90px;height:90px;background:gold;border-radius:50%;margin:auto;display:flex;align-items:center;justify-content:center;font-size:44px;border:3px solid #ff6b00">👑</div><h3>HAMID SALAH 👑</h3><p style="color:#aaa">Terminale A4 - N'Djamena</p></div></div>
 
-<div id="annales" class="page"><div class="card"><h2>📜 ANNALES BAC - VRAIS SUJETS</h2>
-<button class="btn" style="background:#8e24aa;color:white" onclick="showE('a2024')">BAC 2024 - PHILO</button>
-<button class="btn" style="background:#eee" onclick="showE('a2016')">BAC 2016 - PHILO</button>
-<button class="btn" style="background:#eee" onclick="showE('a2026m')">BAC 2026 - MATHS</button></div>
-<div id="a2024" class="etape show card"><h3>📜 BAC 2024 - Philo - A4 & AB - 4H</h3><p><b>SUJET 1 :</b> Philosopher, c'est comprendre que nul n'a le monopole de la philosophie.<br><br><b>SUJET 2 :</b> MALTHUS : Le facteur essentiel du développement n'est pas le capital, mais le savoir des hommes.</p><button class="btn ok" onclick="alert('Fais ce sujet en 4h comme au vrai BAC !')">✍️ JE TRAITE CE SUJET</button></div>
-<div id="a2016" class="etape card"><h3>📜 BAC Juin 2016 - Philo</h3><p><b>SUJET 1 :</b> Est-il légitime d'avoir recours à la violence pour défendre ses droits ?</p><button class="btn ok" onclick="alert('Fais ce sujet en 4h !')">✍️ JE TRAITE CE SUJET</button></div>
-<div id="a2026m" class="etape card"><h3>📐 BAC 2026 - Maths - A4 & AB - 2H</h3><p><b>EX 1 :</b> x³-x=0 ; e²x-9=0 ; ln(x+1)=ln(3x-1)<br><br><b>PROBLÈME :</b> f(x)=ax + b/(x-3)</p><button class="btn ok" onclick="alert('Fais ce sujet en 2h !')">✍️ JE TRAITE CE SUJET</button></div>
-</div>
-
-<div id="plan" class="page">
-<div class="card" style="background:#0b2e59;color:white;text-align:center"><h2>📅 EMPLOI DU TEMPS - TA4</h2><p>Complexe Scolaire Privé Dinguessou — Niveau TA4<br>🍃 Création par Hamid Salah</p></div>
-<table><tr><th>JOUR</th><th>MATIÈRES & DURÉE</th><th>TOTAL</th></tr>
-<tr><td class="jour">📅 Lundi</td><td>• Philosophie — 1h<br>• Français — 2h<br>• Arabe — 2h</td><td class="total">5h</td></tr>
-<tr><td class="jour">📅 Mardi</td><td>• Philosophie — 2h<br>• Anglais — 1h<br>• Histoire — 2h</td><td class="total">5h</td></tr>
-<tr><td class="jour">📅 Mercredi</td><td>• Mathématiques — 1h<br>• Français — 2h<br>• Philosophie — 2h</td><td class="total">5h</td></tr>
-<tr><td class="jour">📅 Jeudi</td><td>• Philosophie — 1h<br>• Arabe — 2h<br>• Mathématiques — 1h</td><td class="total">4h</td></tr>
-<tr><td class="jour">📅 Vendredi</td><td>• Anglais — 1h<br>• Français — 2h<br>• Géographie — 2h</td><td class="total">5h</td></tr>
-<tr><td class="jour">📅 Samedi</td><td>• EPS — 1h<br>• Philosophie — 2h<br>• Français — 2h</td><td class="total">5h</td></tr>
-<tr><td class="jour">❤️ Dimanche</td><td>• REPOS - Révision à la maison</td><td class="total">❤️</td></tr>
-</table>
-<div class="card"><h3>📊 TOTAL SEMAINE : 29h de cours</h3><p><b>Le plus de cours :</b> Philo 8h + Français 8h = C'est ça le BAC A4 !</p></div>
-</div>
-
-<div id="notes" class="page">
-<div class="card" style="background:#fce4ec;border:3px solid #e91e63;text-align:center"><h2>📝 MES NOTES / MON CAHIER</h2><p>Ton cahier personnel ! Écris tout ce que tu veux retenir !<br>Ça reste dans TON téléphone, même si tu fermes l'application ! ❤️</p></div>
-<div class="card"><h3>✏️ Écris ton nom :</h3><input id="monNom" placeholder="Ex: Hamid, Amina, Moussa..." onchange="sauveNom()"><p><small>Ton nom va apparaître dans le Classement des Champions !</small></p></div>
-<div class="card"><h3>📖 MON CAHIER - Philo</h3><textarea id="notePhilo" rows="4" placeholder="Ex: Descartes = Je pense donc je suis...&#10;Freud = Inconscient, rêves..."></textarea><button class="btn" style="background:#7c4dff;color:white" onclick="sauveNotes()">💾 SAUVEGARDER PHILO</button></div>
-<div class="card"><h3>📖 MON CAHIER - Français / Mulubé</h3><textarea id="noteFr" rows="4" placeholder="Ex: Mulubé = Président des Étudiants de Soweto...&#10;La liberté ne s'obtient pas sans sacrifice..."></textarea><button class="btn" style="background:#2aa5ff;color:white" onclick="sauveNotes()">💾 SAUVEGARDER FRANÇAIS</button></div>
-<div class="card"><h3>📖 MON CAHIER - Histoire / Géo</h3><textarea id="noteHist" rows="4" placeholder="Ex: Tchad indépendant 11 Août 1960...&#10;Lac Tchad, Chari, Logone..."></textarea><button class="btn" style="background:#ffb800" onclick="sauveNotes()">💾 SAUVEGARDER HISTOIRE / GÉO</button></div>
-<div class="card"><h3>📖 MON CAHIER - Tout ce que je veux !</h3><textarea id="noteLibre" rows="5" placeholder="Écris tout ce que tu veux ne pas oublier pour le BAC...&#10;Ex: Demain je révise Mulubé + Philo Conscience"></textarea><button class="btn" style="background:#00e676" onclick="sauveNotes()">💾 SAUVEGARDER TOUT</button><button class="btn" style="background:#ff5252;color:white" onclick="effaceNotes()">🗑️ Effacer mes notes</button><p id="msgNotes" style="color:#00a651;font-weight:900"></p></div>
-<div class="card"><h3>💡 Idées pour tes notes :</h3><p>• Les phrases pour avoir 15/20<br>• Les dates à retenir : 1960, 1945, 1989<br>• Les définitions difficiles<br>• Ce que le prof a dit en classe aujourd'hui</p></div>
-</div>
-
-<div id="champ" class="page">
-<div class="card" style="background:gold;text-align:center;border:3px solid black"><h2>🏆 CLASSEMENT DES CHAMPIONS</h2><p>Qui est le N°1 de Dinguessou ?<br>Finis des cours = +10 points | Quiz bonne réponse = +5 points | Mulubé = +20 points !</p></div>
-<div class="card"><h3>⭐ TOI, TES POINTS :</h3><p id="mespoints2" style="font-size:22px;font-weight:900">⭐ 0 points - 0 cours finis</p><p>Écris ton nom dans MES NOTES pour apparaître ici !</p><button class="btn" style="background:#e91e63;color:white" onclick="go('notes')">📝 Écrire mon nom →</button></div>
-<div class="card"><h3>🏆 LES CHAMPIONS DE DINGUESSOU - EXEMPLES :</h3>
-<div class="champ"><div class="rank">🥇</div><div><b>HAMID SALAH 👑</b><br><small>Créateur de l'application - TA4</small></div><div style="margin-left:auto;font-weight:900;color:gold">500 pts</div></div>
-<div class="champ"><div class="rank">🥈</div><div><b>MULUBÉ ⭐</b><br><small>Le héros de Soweto - Courage !</small></div><div style="margin-left:auto;font-weight:900">400 pts</div></div>
-<div class="champ"><div class="rank">🥉</div><div><b>CHAMPION TA4</b><br><small>Finis 10 cours pour être ici !</small></div><div style="margin-left:auto;font-weight:900">200 pts</div></div>
-<div class="champ"><div class="rank">4️⃣</div><div><b>CHAMPION TA4</b><br><small>Finis 5 cours pour être ici !</small></div><div style="margin-left:auto;font-weight:900">100 pts</div></div>
-<div class="champ"><div class="rank">5️⃣</div><div><b>CHAMPION TA4</b><br><small>Finis 1 cours pour commencer !</small></div><div style="margin-left:auto;font-weight:900">10 pts</div></div>
-</div>
-<div class="card"><h3>🎯 COMMENT GAGNER DES POINTS ?</h3><p>✅ Clique sur <b>"J'ai compris !"</b> à la fin d'un cours = <b>+10 points</b><br>✅ Clique sur <b>"J'AI COMPRIS MULUBÉ !"</b> = <b>+20 points</b><br>✅ Bonne réponse au Quiz = <b>+5 points</b><br><br>Plus tu apprends, plus tu montes ! 💪</p><button class="btn" style="background:#7c4dff;color:white" onclick="go('philo')">🧠 Aller apprendre →</button><button class="btn" style="background:black;color:white" onclick="go('quiz')">🎯 Aller au Quiz →</button></div>
-<div class="card"><h3>📲 DÉFI POUR LA CLASSE :</h3><p>Envoie une capture de tes points dans le groupe !<br>Qui aura 500 points en premier ?</p></div>
-</div>
-
-<div class="bottom">
-<button id="bb-acc" class="on" onclick="go('acc')">🏠<br>Accueil</button>
-<button id="bb-philo" onclick="go('philo')">🧠<br>Philo</button>
-<button id="bb-fr" onclick="go('fr')">📖<br>Français</button>
-<button id="bb-hist" onclick="go('hist')">🌍<br>Histoire</button>
-<button id="bb-geo" onclick="go('geo')">🗺️<br>Géo</button>
-<button id="bb-meth" onclick="go('meth')">📝<br>Méthode</button>
-<button id="bb-quiz" onclick="go('quiz')">🎯<br>Quiz</button>
-<button id="bb-annales" onclick="go('annales')">📜<br>Annales</button>
-<button id="bb-plan" onclick="go('plan')">📅<br>Emploi</button>
-<button id="bb-notes" onclick="go('notes')">📝<br>Notes</button>
-<button id="bb-champ" onclick="go('champ')">🏆<br>Champions</button>
+<div class="bottomNav">
+<div class="navItem active" id="nav-accueil" onclick="ouvrirPage('accueil')"><div>🏠</div>Accueil</div>
+<div class="navItem" id="nav-philo" onclick="ouvrirPage('philo')"><div>🧠</div>Philo</div>
+<div class="navItem" id="nav-fr" onclick="ouvrirPage('fr')"><div>📖</div>Français</div>
+<div class="navItem" id="nav-hist" onclick="ouvrirPage('hist')"><div>🌍</div>Histoire</div>
+<div class="navItem" id="nav-quiz" onclick="ouvrirPage('quiz')"><div>🎯</div>Quiz</div>
+<div class="navItem" id="nav-notes" onclick="ouvrirPage('notes')"><div>📝</div>Notes</div>
 </div>
 <script>
-let score=0,fait=0,connectes=1;
-let points=parseInt(localStorage.getItem('pointsHamid')||'0');
-let monNomSauve=localStorage.getItem('nomHamid')||'';
-function majPoints(){let n=monNomSauve||'Toi';document.getElementById('mespoints').innerText='⭐ Tes points : '+points+' points ('+fait+' cours)';document.getElementById('mespoints2').innerText='⭐ '+n+' : '+points+' points - '+fait+' cours finis';}
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.bar button').forEach(b=>b.classList.remove('active'));let tb=document.getElementById('b-'+id);if(tb)tb.classList.add('active');document.querySelectorAll('.bottom button').forEach(b=>b.classList.remove('on'));let bb=document.getElementById('bb-'+id);if(bb)bb.classList.add('on');window.scrollTo(0,0);}
-function showE(id){document.querySelectorAll('.etape').forEach(e=>e.classList.remove('show'));document.getElementById(id).classList.add('show');}
-function fini(t){fait++;let pts=(t.includes('Mulubé')?20:10);points+=pts;localStorage.setItem('pointsHamid',points);document.getElementById('prog').innerText='Bravo ! Tu as fini '+fait+' cours : '+t+' 👏';majPoints();alert('Bravo ! ✅ Tu as fini : '+t+'\n+'+pts+' points ! 🏆\nTu as maintenant '+points+' points ! Va voir le Classement !');}
-function rep(btn,bien){if(bien){btn.classList.add('ok');score++;points+=5;localStorage.setItem('pointsHamid',points);majPoints();}else{btn.classList.add('bad');}document.getElementById('score').innerText='Score : '+score+' / 8';if(bien)alert('Bonne réponse ! 🎉 +5 points ! Tu as '+points+' points !');else alert('Pas grave, essaie encore ! 💪');}
-function jeSuisLa(){connectes++;document.getElementById('connectes').innerHTML='👥 <b>'+connectes+'</b> élèves de Dinguessou sont connectés maintenant ! Merci d être là ! ❤️';alert('Merci ! On a compté que tu es connecté ! 👑 Tu es le N° '+connectes);}
-function sauveNom(){let n=document.getElementById('monNom').value;monNomSauve=n;localStorage.setItem('nomHamid',n);majPoints();alert('Super '+n+' ! Ton nom est sauvegardé ! Tu vas apparaître dans le Classement ! 🏆');}
-function sauveNotes(){localStorage.setItem('notePhilo',document.getElementById('notePhilo').value);localStorage.setItem('noteFr',document.getElementById('noteFr').value);localStorage.setItem('noteHist',document.getElementById('noteHist').value);localStorage.setItem('noteLibre',document.getElementById('noteLibre').value);document.getElementById('msgNotes').innerText='✅ Tes notes sont sauvegardées ! Elles resteront même si tu fermes l application !';alert('Tes notes sont sauvegardées ! 📝 Bravo !');}
-function effaceNotes(){if(confirm('Tu veux vraiment effacer toutes tes notes ?')){['notePhilo','noteFr','noteHist','noteLibre'].forEach(k=>localStorage.removeItem(k));document.getElementById('notePhilo').value='';document.getElementById('noteFr').value='';document.getElementById('noteHist').value='';document.getElementById('noteLibre').value='';alert('Notes effacées !');}}
-window.onload=function(){document.getElementById('notePhilo').value=localStorage.getItem('notePhilo')||'';document.getElementById('noteFr').value=localStorage.getItem('noteFr')||'';document.getElementById('noteHist').value=localStorage.getItem('noteHist')||'';document.getElementById('noteLibre').value=localStorage.getItem('noteLibre')||'';if(monNomSauve)document.getElementById('monNom').value=monNomSauve;majPoints();};
+function entrerApp(){var s=document.getElementById('splash');if(!s)return;s.style.opacity='0';setTimeout(function(){s.style.display='none'},300)}
+setTimeout(entrerApp,1600);setTimeout(function(){var s=document.getElementById('splash');if(s&&s.style.display!='none')s.style.display='none'},3500);
+function ouvrirPage(page){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var el=document.getElementById('page-'+page);if(el)el.classList.add('active');document.querySelectorAll('.navItem').forEach(function(n){n.classList.remove('active')});var nav=document.getElementById('nav-'+page);if(nav)nav.classList.add('active');window.scrollTo(0,0);}
+function showE(id){document.querySelectorAll('.etape').forEach(function(e){e.classList.remove('show')});var el=document.getElementById(id);if(el)el.classList.add('show');}
+let score=0,fait=0,connectes=1;let points=parseInt(localStorage.getItem('pointsHamid')||'0');let monNomSauve=localStorage.getItem('nomHamid')||'Hamid Salah';
+function majPoints(){let n=monNomSauve||'Hamid Salah';document.getElementById('mespoints').innerText='⭐ Tes points : '+points+' points ('+fait+' cours)';document.getElementById('mespoints2').innerText='⭐ '+n+' : '+points+' points - '+fait+' cours finis';}
+function fini(t){fait++;let pts=(t.includes('Mulubé')?20:10);points+=pts;localStorage.setItem('pointsHamid',points);document.getElementById('prog').innerText='Bravo ! Tu as fini '+fait+' cours : '+t+' 👏';majPoints();alert('Bravo ! ✅ '+t+'\n+'+pts+' points ! 🏆 Tu as '+points+' points !');}
+function rep(btn,bien){if(bien){btn.classList.add('ok');score++;points+=5;localStorage.setItem('pointsHamid',points);majPoints();}else{btn.classList.add('bad');}document.getElementById('score').innerText='Score : '+score+' / 8';if(bien)alert('Bonne réponse ! 🎉 +5 points !');else alert('Pas grave, essaie encore ! 💪');}
+function jeSuisLa(){connectes++;document.getElementById('connectes').innerHTML='👥 <b>'+connectes+'</b> élèves connectés ! Merci ❤️';alert('Merci ! Tu es le N° '+connectes);}
+function sauveNom(){let n=document.getElementById('monNom').value;monNomSauve=n;localStorage.setItem('nomHamid',n);majPoints();alert('Super '+n+' ! Nom sauvegardé ! 🏆');}
+function sauveNotes(){localStorage.setItem('notePhilo',document.getElementById('notePhilo').value);localStorage.setItem('noteFr',document.getElementById('noteFr').value);localStorage.setItem('noteHist',document.getElementById('noteHist').value);localStorage.setItem('noteLibre',document.getElementById('noteLibre').value);document.getElementById('msgNotes').innerText='✅ Notes sauvegardées !';alert('Notes sauvegardées ! 📝');}
+function effaceNotes(){if(confirm('Effacer toutes tes notes ?')){['notePhilo','noteFr','noteHist','noteLibre'].forEach(function(k){localStorage.removeItem(k)});document.getElementById('notePhilo').value='';document.getElementById('noteFr').value='';document.getElementById('noteHist').value='';document.getElementById('noteLibre').value='';alert('Notes effacées !');}}
+window.onload=function(){document.getElementById('notePhilo').value=localStorage.getItem('notePhilo')||'';document.getElementById('noteFr').value=localStorage.getItem('noteFr')||'';document.getElementById('noteHist').value=localStorage.getItem('noteHist')||'';document.getElementById('noteLibre').value=localStorage.getItem('noteLibre')||'';document.getElementById('monNom').value=monNomSauve;majPoints();};
 </script></body></html>
